@@ -4,9 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kishore Kumar S - Portfolio</title>
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome (only needed icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- AOS Animation -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css">
   <style>
     .gradient-text {
@@ -32,26 +36,38 @@
       box-shadow: 0 8px 32px 0 rgba(0,224,255,0.3);
       border: 2px solid #00e0ff;
     }
+    /* Hide scroll on mobile menu overlay */
+    body.menu-open {
+      overflow: hidden;
+    }
   </style>
 </head>
-<body class="min-h-screen text-white font-sans">
+<body class="min-h-screen text-white font-sans bg-[#181c2f]">
 
 <!-- NAVBAR -->
-<nav class="fixed w-full z-50 bg-[#181c2f]/80 backdrop-blur-md shadow-lg">
-  <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-4 sm:px-6">
+<nav class="fixed w-full z-50 bg-[#181c2f]/90 backdrop-blur-md shadow-lg">
+  <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-4 sm:px-6 relative">
     <span class="font-extrabold text-xl sm:text-2xl gradient-text">Kishore Kumar S</span>
-    <ul class="flex flex-wrap gap-2 sm:gap-4 md:gap-6 font-semibold text-gray-200 text-sm sm:text-base">
-      <li><a href="#about" class="nav-link hover:text-[#00e0ff] transition">About</a></li>
-      <li><a href="#education" class="nav-link hover:text-[#00e0ff] transition">Education</a></li>
-      <li><a href="#projects" class="nav-link hover:text-[#00e0ff] transition">Projects</a></li>
-      <li><a href="#skills" class="nav-link hover:text-[#00e0ff] transition">Skills</a></li>
-      <li><a href="#contact" class="nav-link hover:text-[#00e0ff] transition">Contact</a></li>
+    <!-- Hamburger for mobile -->
+    <button class="sm:hidden text-2xl focus:outline-none" onclick="toggleMenu()" aria-label="Open navigation menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <!-- Nav Links -->
+    <ul id="nav-menu" class="hidden sm:flex flex-col sm:flex-row gap-4 font-semibold text-gray-200 text-base absolute sm:static top-16 left-0 w-full sm:w-auto bg-[#181c2f] sm:bg-transparent z-40 border-t border-[#232526] sm:border-none">
+      <li><a href="#about" class="nav-link block py-3 px-4 hover:text-[#00e0ff] transition">About</a></li>
+      <li><a href="#education" class="nav-link block py-3 px-4 hover:text-[#00e0ff] transition">Education</a></li>
+      <li><a href="#projects" class="nav-link block py-3 px-4 hover:text-[#00e0ff] transition">Projects</a></li>
+      <li><a href="#skills" class="nav-link block py-3 px-4 hover:text-[#00e0ff] transition">Skills</a></li>
+      <li><a href="#contact" class="nav-link block py-3 px-4 hover:text-[#00e0ff] transition">Contact</a></li>
     </ul>
   </div>
 </nav>
 
+<!-- Add top padding to prevent content under header -->
+<div class="pt-20 sm:pt-24"></div>
+
 <!-- HERO SECTION -->
-<section class="pt-32 pb-16 flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 min-h-[70vh]" id="home">
+<section class="pb-16 flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 min-h-[70vh]" id="home">
   <div class="flex-1 flex flex-col items-start" data-aos="fade-right">
     <h5 class="text-base sm:text-lg font-bold text-[#00e0ff] mb-2 tracking-widest">MERN Stack Developer | Fresher</h5>
     <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 gradient-text">
@@ -72,8 +88,8 @@
     </div>
   </div>
   <div class="flex-1 flex justify-center mt-10 md:mt-0" data-aos="fade-left">
-    <div class="profile-banner w-40 h-40 sm:w-56 sm:h-56 cursor-pointer" id="hero-profile">
-      <img src="pro image.jpg" alt="Kishore Kumar S"/>
+    <div class="profile-banner w-32 h-32 xs:w-40 xs:h-40 sm:w-56 sm:h-56 cursor-pointer" id="hero-profile">
+      <img src="2pro.jpg" alt="Kishore Kumar S" loading="lazy" class="max-w-full h-auto"/>
     </div>
   </div>
 </section>
@@ -81,12 +97,12 @@
 <!-- WHO AM I SECTION -->
 <section id="about" class="relative flex justify-center items-center min-h-[60vh] overflow-hidden px-2">
   <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute w-44 sm:w-72 h-44 sm:h-72 bg-[#00e0ff]/20 rounded-full top-10 left-10 blur-3xl"></div>
-    <div class="absolute w-36 sm:w-60 h-36 sm:h-60 bg-[#8f5cff]/20 rounded-full bottom-10 right-10 sm:right-20 blur-2xl"></div>
+    <div class="absolute w-28 sm:w-44 h-28 sm:h-44 bg-[#00e0ff]/20 rounded-full top-10 left-10 blur-3xl"></div>
+    <div class="absolute w-20 sm:w-36 h-20 sm:h-36 bg-[#8f5cff]/20 rounded-full bottom-10 right-10 sm:right-20 blur-2xl"></div>
   </div>
   <div class="relative z-10 flex flex-col md:flex-row items-center gap-8 sm:gap-12 p-4 sm:p-6 md:p-10 bg-white/5 backdrop-blur-lg rounded-3xl shadow-2xl border border-[#00e0ff]/20" data-aos="zoom-in">
-    <div class="profile-banner w-24 h-24 sm:w-36 sm:h-36 md:w-44 md:h-44">
-      <img src="pro image.jpg" alt="Kishore Kumar S"/>
+    <div class="profile-banner w-20 h-20 sm:w-36 sm:h-36 md:w-44 md:h-44">
+      <img src="pro image.jpg" alt="Kishore Kumar S" loading="lazy" class="max-w-full h-auto"/>
     </div>
     <div>
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#00e0ff] mb-4 tracking-tight">About Me</h2>
@@ -143,12 +159,12 @@
 <!-- PROJECTS -->
 <section id="projects" class="max-w-6xl mx-auto py-16 px-2 sm:px-4" data-aos="fade-up">
   <h2 class="text-2xl sm:text-3xl font-extrabold mb-10 text-center gradient-text">Projects</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
     <!-- Project 1 -->
     <a href="https://to-do-app-7a5m.onrender.com" target="_blank"
        class="relative group rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#232526] via-[#1e2761] to-[#00e0ff]/40 hover:scale-105 transition duration-300"
        data-aos="zoom-in">
-      <img src="todo.jpg" alt="To-Do App" class="w-full h-48 object-cover object-top group-hover:scale-110 transition duration-500"/>
+      <img src="todo.jpg" alt="To-Do App" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-110 transition duration-500"/>
       <div class="p-4 sm:p-6">
         <h3 class="text-lg sm:text-xl font-bold mb-2 text-[#00e0ff]">To-Do App (MERN)</h3>
         <p class="text-gray-200 mb-4 text-sm sm:text-base">A full-stack productivity app for managing daily tasks efficiently.</p>
@@ -161,7 +177,7 @@
     <a href="https://kishore192110526.github.io/Weather-forecast-using-openweather-API/" target="_blank"
        class="relative group rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#232526] via-[#1e2761] to-[#8f5cff]/40 hover:scale-105 transition duration-300"
        data-aos="zoom-in" data-aos-delay="100">
-      <img src="weather.jpg" alt="Weather Forecast" class="w-full h-48 object-cover object-top group-hover:scale-110 transition duration-500"/>
+      <img src="weather.jpg" alt="Weather Forecast" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-110 transition duration-500"/>
       <div class="p-4 sm:p-6">
         <h3 class="text-lg sm:text-xl font-bold mb-2 text-[#8f5cff]">Weather Forecast (React)</h3>
         <p class="text-gray-200 mb-4 text-sm sm:text-base">A real-time weather forecast web app with clean UI.</p>
@@ -174,7 +190,7 @@
     <a href="https://kishore192110526.github.io/Education-Academy-web/" target="_blank"
        class="relative group rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#232526] via-[#1e2761] to-[#ff5eae]/40 hover:scale-105 transition duration-300"
        data-aos="zoom-in" data-aos-delay="200">
-      <img src="edua.jpg" alt="Education Academy" class="w-full h-48 object-cover object-top group-hover:scale-110 transition duration-500"/>
+      <img src="edua.jpg" alt="Education Academy" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-110 transition duration-500"/>
       <div class="p-4 sm:p-6">
         <h3 class="text-lg sm:text-xl font-bold mb-2 text-[#ff5eae]">Education Academy Landing Page</h3>
         <p class="text-gray-200 mb-4 text-sm sm:text-base">Modern landing page for an education academy.</p>
@@ -191,51 +207,51 @@
   <h2 class="text-2xl sm:text-3xl font-extrabold mb-10 text-center gradient-text">My Skills</h2>
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer" data-aos="fade-right" style="background:linear-gradient(135deg,#00e0ff,#43e97b);" onclick="activateSkill(this)">
-      <img src="html5.png" alt="HTML5" class="w-12 sm:w-16 mb-2"/>
+      <img src="html5.png" alt="HTML5" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">HTML5</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer" data-aos="fade-right" data-aos-delay="100" style="background:linear-gradient(135deg,#8f5cff,#ff5eae);" onclick="activateSkill(this)">
-      <img src="css3.png" alt="CSS3" class="w-12 sm:w-16 mb-2"/>
+      <img src="css3.png" alt="CSS3" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">CSS3</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer" data-aos="fade-right" data-aos-delay="200" style="background:linear-gradient(135deg,#ff6a00,#ffb347);" onclick="activateSkill(this)">
-      <img src="javascript.png" alt="JavaScript" class="w-12 sm:w-16 mb-2"/>
+      <img src="javascript.png" alt="JavaScript" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">JavaScript</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="100" style="background:linear-gradient(135deg,#fc4a1a,#f7b733);" onclick="activateSkill(this)">
-      <img src="tail.png" alt="Tailwind" class="w-12 sm:w-16 mb-2"/>
+      <img src="tail.png" alt="Tailwind" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">Tailwind CSS</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer" data-aos="fade-right" data-aos-delay="300" style="background:linear-gradient(135deg,#43cea2,#185a9d);" onclick="activateSkill(this)">
-      <img src="react.png" alt="React" class="w-12 sm:w-16 mb-2"/>
+      <img src="react.png" alt="React" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">React</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer" data-aos="fade-left" style="background:linear-gradient(135deg,#b06ab3,#4568dc);" onclick="activateSkill(this)">
-      <img src="nodejs.png" alt="Node.js" class="w-12 sm:w-16 mb-2"/>
+      <img src="nodejs.png" alt="Node.js" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">Node.js</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer" data-aos="fade-left" data-aos-delay="100" style="background:linear-gradient(135deg,#13aa52,#b8e994);" onclick="activateSkill(this)">
-      <img src="mongodb.png" alt="MongoDB" class="w-16 sm:w-24 mb-2"/>
+      <img src="mongodb.png" alt="MongoDB" loading="lazy" class="w-16 sm:w-24 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">MongoDB</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer" data-aos="fade-left" data-aos-delay="200" style="background:linear-gradient(135deg,#000,#333);" onclick="activateSkill(this)">
-      <img src="expressjs.png" alt="Express.js" class="w-12 sm:w-16 mb-2"/>
+      <img src="expressjs.png" alt="Express.js" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">Express.js</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="0" style="background:linear-gradient(135deg,#f7971e,#ffd200);" onclick="activateSkill(this)">
-      <img src="git.png" alt="Git" class="w-12 sm:w-16 mb-2"/>
+      <img src="git.png" alt="Git" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">Git</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer" data-aos="fade-left" data-aos-delay="300" style="background:linear-gradient(135deg,#211F1F,#6e5494);" onclick="activateSkill(this)">
-      <img src="github.png" alt="GitHub" class="w-12 sm:w-16 mb-2"/>
+      <img src="github.png" alt="GitHub" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">GitHub</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="200" style="background:linear-gradient(135deg,#f0f0f0,#bdbdbd);" onclick="activateSkill(this)">
-      <img src="rest.png" alt="REST API" class="w-12 sm:w-16 mb-2"/>
+      <img src="rest.png" alt="REST API" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">REST API</span>
     </div>
     <div class="skill-card flex flex-col items-center rounded-xl p-6 shadow-lg cursor-pointer col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="300" style="background:linear-gradient(135deg,#f7971e,#ffd200);" onclick="activateSkill(this)">
-      <img src="npm.png" alt="NPM" class="w-12 sm:w-16 mb-2"/>
+      <img src="npm.png" alt="NPM" loading="lazy" class="w-12 sm:w-16 mb-2 max-w-full h-auto"/>
       <span class="font-bold text-base sm:text-lg">NPM</span>
     </div>
   </div>
@@ -276,34 +292,57 @@
     </div>
   </div>
 </section>
+
 <!-- FOOTER -->
 <footer class="text-center py-6 bg-[#181c2f]/90 mt-10 text-gray-300">
   &copy; 2025 Kishore Kumar S. All rights reserved.
 </footer>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ once: true, duration: 900 });
 
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-      setTimeout(() => this.classList.remove('active'), 700);
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+<script defer>
+  // Hamburger menu for mobile
+  function toggleMenu() {
+    const nav = document.getElementById('nav-menu');
+    nav.classList.toggle('hidden');
+    document.body.classList.toggle('menu-open');
+  }
+
+  // AOS animation
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({ once: true, duration: 900 });
+
+    // Navbar link active effect
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        setTimeout(() => this.classList.remove('active'), 700);
+
+        // If on mobile, close menu after click
+        if (window.innerWidth < 640) {
+          toggleMenu();
+        }
+      });
     });
+
+    // Profile banner animation
+    const heroProfile = document.getElementById('hero-profile');
+    if(heroProfile) {
+      heroProfile.addEventListener('mouseenter', function() {
+        this.classList.add('animated');
+      });
+      heroProfile.addEventListener('mouseleave', function() {
+        this.classList.remove('animated');
+      });
+      heroProfile.addEventListener('touchstart', function() {
+        this.classList.add('animated');
+        setTimeout(() => this.classList.remove('animated'), 900);
+      });
+    }
   });
 
-  const heroProfile = document.getElementById('hero-profile');
-  heroProfile.addEventListener('mouseenter', function() {
-    this.classList.add('animated');
-  });
-  heroProfile.addEventListener('mouseleave', function() {
-    this.classList.remove('animated');
-  });
-  heroProfile.addEventListener('touchstart', function() {
-    this.classList.add('animated');
-    setTimeout(() => this.classList.remove('animated'), 900);
-  });
-
+  // Skill card click
   window.activateSkill = function(el) {
     document.querySelectorAll('.skill-card').forEach(card => card.classList.remove('active'));
     el.classList.add('active');
